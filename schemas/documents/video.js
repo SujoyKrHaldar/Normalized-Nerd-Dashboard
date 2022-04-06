@@ -1,6 +1,10 @@
+import moment from "moment";
+import { AiFillVideoCamera } from "react-icons/ai";
+
 export default {
   name: "video",
   title: "Video",
+  icon: AiFillVideoCamera,
   type: "document",
   fields: [
     {
@@ -8,15 +12,25 @@ export default {
       title: "Title",
       type: "string",
     },
-    // {
-    //   name: "slug",
-    //   title: "Slug",
-    //   type: "slug",
-    //   options: {
-    //     source: "title",
-    //     maxLength: 96,
-    //   },
-    // },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+      },
+    },
+    {
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    },
     // {
     //   name: "author",
     //   title: "Author",
@@ -35,24 +49,15 @@ export default {
     {
       name: "videoLink",
       title: "Video Link",
-      type: "url",
+      type: "youtube",
     },
     {
       name: "isFeatrued",
       title: "Is Featured",
+      initialValue: false,
       type: "boolean",
     },
-    {
-      name: "isNew",
-      title: "Mark as new",
-      type: "boolean",
-    },
-    {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
-    },
+
     {
       name: "publishedAt",
       title: "Published at",
@@ -60,21 +65,22 @@ export default {
     },
     {
       name: "body",
-      title: "Description",
-      type: "blockContent",
+      title: "Details",
+      type: "simplePortableText",
     },
   ],
 
   preview: {
     select: {
       title: "title",
-      author: "author.name",
       media: "mainImage",
+      subtitle: "publishedAt",
     },
     prepare(selection) {
-      const { author } = selection;
+      const { subtitle } = selection;
+      const date = moment(subtitle).format("MMMM Do YYYY, h:mm a");
       return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
+        subtitle: date && `On ${date}`,
       });
     },
   },

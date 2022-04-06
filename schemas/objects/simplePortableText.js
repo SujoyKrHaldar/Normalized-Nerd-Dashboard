@@ -27,10 +27,11 @@ export default {
       icon: FaCode,
       title: "Code",
       options: {
+        theme: "github",
         withFilename: true,
-        theme: "solarized_dark",
       },
     },
+    { type: "externalImgUrl", icon: FaImage, title: "External Image" },
     {
       type: "image",
       icon: FaImage,

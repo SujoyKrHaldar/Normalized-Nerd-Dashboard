@@ -1,5 +1,5 @@
-import { FaQuestionCircle } from "react-icons/fa";
 import moment from "moment";
+import { FaQuestionCircle } from "react-icons/fa";
 
 export default {
   name: "faq",
@@ -13,7 +13,6 @@ export default {
       type: "string",
       validation: (Rule) => Rule.required(),
     },
-
     {
       name: "isFeatured",
       title: "Is Featured?",

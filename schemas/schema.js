@@ -10,6 +10,7 @@ import category from "./documents/category";
 import youtube from "./objects/youtube";
 import blockContent from "./objects/blockContent";
 import simplePortableText from "./objects/simplePortableText";
+import externalImage from "./objects/externalImage";
 
 export default createSchema({
   name: "default",
@@ -20,6 +21,7 @@ export default createSchema({
     category,
     faq,
     youtube,
+    externalImage,
     simplePortableText,
     blockContent,
   ]),
