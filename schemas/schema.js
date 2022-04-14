@@ -11,6 +11,7 @@ import youtube from "./objects/youtube";
 import blockContent from "./objects/blockContent";
 import simplePortableText from "./objects/simplePortableText";
 import externalImage from "./objects/externalImage";
+import project from "./documents/project";
 
 export default createSchema({
   name: "default",
@@ -19,6 +20,7 @@ export default createSchema({
     video,
     author,
     category,
+    project,
     faq,
     youtube,
     externalImage,
