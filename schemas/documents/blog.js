@@ -1,6 +1,10 @@
+import moment from "moment";
+import { AiFillVideoCamera } from "react-icons/ai";
+
 export default {
   name: "blog",
   title: "Blog",
+  icon: AiFillVideoCamera,
   type: "document",
   fields: [
     {
@@ -52,13 +56,14 @@ export default {
   preview: {
     select: {
       title: "title",
-      author: "author.name",
+      subtitle: "publishedAt",
       media: "mainImage",
     },
     prepare(selection) {
-      const { author } = selection;
+      const { subtitle } = selection;
+      const date = moment(subtitle).format("MMMM Do YYYY, h:mm a");
       return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
+        subtitle: date && `On ${date}`,
       });
     },
   },

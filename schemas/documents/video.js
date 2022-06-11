@@ -52,13 +52,6 @@ export default {
       type: "youtube",
     },
     {
-      name: "isFeatrued",
-      title: "Is Featured",
-      initialValue: false,
-      type: "boolean",
-    },
-
-    {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
