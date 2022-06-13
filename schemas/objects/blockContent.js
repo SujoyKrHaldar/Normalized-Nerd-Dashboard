@@ -21,6 +21,7 @@ export default {
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
+          { title: "Code", value: "code" },
         ],
         annotations: [
           {
@@ -39,6 +40,16 @@ export default {
       },
     },
     { title: "Youtube link", type: "youtube" },
+
+    {
+      type: "code",
+      icon: FaCode,
+      title: "Code",
+      options: {
+        withFilename: true,
+        theme: "solarized_dark",
+      },
+    },
     {
       type: "image",
       icon: FaImage,
@@ -54,14 +65,6 @@ export default {
       ],
       options: { hotspot: true },
     },
-    {
-      type: "code",
-      icon: FaCode,
-      title: "Code",
-      options: {
-        withFilename: true,
-        theme: "solarized_dark",
-      },
-    },
+    { type: "externalImgUrl", icon: FaImage, title: "External Image" },
   ],
 };

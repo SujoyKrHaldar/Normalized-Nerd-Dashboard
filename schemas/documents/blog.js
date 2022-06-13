@@ -1,16 +1,22 @@
 import moment from "moment";
-import { AiFillVideoCamera } from "react-icons/ai";
+import { FaBlog } from "react-icons/fa";
 
 export default {
   name: "blog",
   title: "Blog",
-  icon: AiFillVideoCamera,
+  icon: FaBlog,
   type: "document",
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
+    },
+
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
       name: "slug",
@@ -21,12 +27,12 @@ export default {
         maxLength: 96,
       },
     },
-    {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
-    },
+    // {
+    //   name: "author",
+    //   title: "Author",
+    //   type: "reference",
+    //   to: { type: "author" },
+    // },
     {
       name: "mainImage",
       title: "Main image",
