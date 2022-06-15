@@ -1,6 +1,5 @@
 import moment from "moment";
 import { GoProject } from "react-icons/go";
-import preview from "part:sanity-plugin-icon-picker/preview";
 
 export default {
   name: "project",
@@ -25,14 +24,12 @@ export default {
           title: "Link",
           name: "link",
           type: "object",
+          icon: GoProject,
           fields: [
             {
-              title: "Choose icon for the project.",
-              name: "icon",
-              type: "iconPicker",
-              options: {
-                outputFormat: "react",
-              },
+              title: "Url provider",
+              name: "UrlProvider",
+              type: "string",
             },
             {
               title: "Project url",
