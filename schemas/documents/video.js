@@ -1,10 +1,10 @@
 import moment from "moment";
-import { AiFillVideoCamera } from "react-icons/ai";
+import { MdSlowMotionVideo } from "react-icons/md";
 
 export default {
   name: "video",
   title: "Video",
-  icon: AiFillVideoCamera,
+  icon: MdSlowMotionVideo,
   type: "document",
   fields: [
     {
@@ -26,17 +26,11 @@ export default {
       },
     },
     {
-      name: "categories",
-      title: "Categories",
+      name: "tags",
+      title: "Tags",
       type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      of: [{ type: "reference", to: { type: "tags" } }],
     },
-    // {
-    //   name: "author",
-    //   title: "Author",
-    //   type: "reference",
-    //   to: { type: "author" },
-    // },
 
     {
       name: "mainImage",

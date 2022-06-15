@@ -14,12 +14,6 @@ export default {
       type: "string",
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: "isFeatured",
-      title: "Is Featured?",
-      type: "boolean",
-      initialValue: false,
-    },
 
     {
       title: "Links",

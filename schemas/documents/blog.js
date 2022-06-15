@@ -27,12 +27,12 @@ export default {
         maxLength: 96,
       },
     },
-    // {
-    //   name: "author",
-    //   title: "Author",
-    //   type: "reference",
-    //   to: { type: "author" },
-    // },
+    {
+      name: "author",
+      title: "Author",
+      type: "reference",
+      to: { type: "author" },
+    },
     {
       name: "mainImage",
       title: "Main image",
@@ -42,10 +42,10 @@ export default {
       },
     },
     {
-      name: "categories",
-      title: "Categories",
+      name: "tags",
+      title: "Tags",
       type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      of: [{ type: "reference", to: { type: "tags" } }],
     },
     {
       name: "publishedAt",

@@ -1,9 +1,9 @@
-import { AiFillTag } from "react-icons/ai";
+import { AiOutlineTags } from "react-icons/ai";
 
 export default {
-  name: "category",
-  title: "Category",
-  icon: AiFillTag,
+  name: "tags",
+  title: "Tags",
+  icon: AiOutlineTags,
   type: "document",
   fields: [
     {
