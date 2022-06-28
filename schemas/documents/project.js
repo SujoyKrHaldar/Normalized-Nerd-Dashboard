@@ -1,10 +1,10 @@
 import moment from "moment";
-import { GoProject } from "react-icons/go";
+import { FaCodeBranch } from "react-icons/fa";
 
 export default {
   name: "project",
   title: "Project",
-  icon: GoProject,
+  icon: FaCodeBranch,
   type: "document",
   fields: [
     {
@@ -13,32 +13,40 @@ export default {
       type: "string",
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
+    },
 
     {
-      title: "Links",
-      name: "links",
-      type: "array",
-      icon: "icon",
-      of: [
-        {
-          title: "Link",
-          name: "link",
-          type: "object",
-          icon: GoProject,
-          fields: [
-            {
-              title: "Url provider",
-              name: "UrlProvider",
-              type: "string",
-            },
-            {
-              title: "Project url",
-              name: "url",
-              type: "url",
-            },
-          ],
-        },
-      ],
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+
+    {
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
+    },
+
+    {
+      title: "Github link",
+      name: "github",
+      type: "url",
     },
 
     {
@@ -52,7 +60,8 @@ export default {
   preview: {
     select: {
       title: "name",
-      subtitle: "_createdAt",
+      subtitle: "publishedAt",
+      media: "mainImage",
     },
     prepare(selection) {
       const { subtitle } = selection;

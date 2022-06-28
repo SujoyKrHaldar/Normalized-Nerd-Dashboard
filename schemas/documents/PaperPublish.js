@@ -1,30 +1,34 @@
 import moment from "moment";
-import { FaQuestionCircle } from "react-icons/fa";
+import { IoMdPaper } from "react-icons/io";
 
 export default {
-  name: "faq",
-  title: "FAQ",
-  icon: FaQuestionCircle,
+  name: "papers",
+  title: "Papers",
+  icon: IoMdPaper,
   type: "document",
   fields: [
     {
-      name: "question",
-      title: "Question",
+      name: "title",
+      title: "Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+    },
+
+    {
+      name: "link",
+      title: "Link",
+      type: "url",
     },
     {
-      name: "body",
-      title: "Answer",
-      type: "simplePortableText",
-      validation: (Rule) => Rule.required(),
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
     },
   ],
 
   preview: {
     select: {
-      title: "question",
-      subtitle: "_createdAt",
+      title: "title",
+      subtitle: "publishedAt",
     },
     prepare(selection) {
       const { subtitle } = selection;

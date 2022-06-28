@@ -25,12 +25,13 @@ export default {
         source: "title",
       },
     },
-    {
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "reference", to: { type: "tags" } }],
-    },
+
+    // {
+    //   name: "tags",
+    //   title: "Tags",
+    //   type: "array",
+    //   of: [{ type: "reference", to: { type: "tags" } }],
+    // },
 
     {
       name: "mainImage",
@@ -44,6 +45,13 @@ export default {
       name: "videoLink",
       title: "Video Link",
       type: "youtube",
+    },
+    {
+      name: "blogLink",
+      title: "Blog link",
+      description:
+        "https://normalizednerd.com/blogs/your-blog-slug, Copy the slug form your blog section.",
+      type: "string",
     },
     {
       name: "publishedAt",

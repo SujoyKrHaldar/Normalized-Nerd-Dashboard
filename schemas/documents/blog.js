@@ -28,12 +28,6 @@ export default {
       },
     },
     {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
-    },
-    {
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -41,16 +35,21 @@ export default {
         hotspot: true,
       },
     },
-    {
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "reference", to: { type: "tags" } }],
-    },
+    // {
+    //   name: "tags",
+    //   title: "Tags",
+    //   type: "array",
+    //   of: [{ type: "reference", to: { type: "tags" } }],
+    // },
     {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
+    },
+    {
+      name: "githubLink",
+      title: "Github link",
+      type: "url",
     },
     {
       name: "body",
